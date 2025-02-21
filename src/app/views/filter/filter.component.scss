@@ -1,0 +1,13 @@
+.filter{
+    background-color: #e7e0cf;
+    width: 12%;
+    padding: 5px 0;
+    text-align: center;
+    border: 1px solid #615d54;
+    font-weight: 700;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    &:hover{
+        background-color: #d6d0c0;
+    }
+}

@@ -1,0 +1,13 @@
+<div class="form-container">
+    <form > 
+        <div class="task">
+            <input id="toDo" class="input-task" type="text" placeholder="Enter a Task" >
+
+            <select >
+                <option *ngFor="let category of categories" [value]="category" >{{category}}</option>
+            </select>
+            
+            <button class="addButton" type="submit"  >+ Add</button>
+        </div>
+    </form>
+</div>

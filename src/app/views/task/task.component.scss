@@ -1,0 +1,37 @@
+.form-container{
+    margin-top: 10px;
+    .task{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    form{
+        padding: 18px;
+        margin: 0;
+    }
+
+    .input-task{
+        padding: 5px;
+        width: 35%;
+    }
+  
+    select{
+        padding: 5px;
+        background-color: #dcceb3;
+        font-size: 12px;
+    }
+
+    .addButton{
+        padding: 5px 30px;
+        margin-left: 20px;
+        background-color: #c5b18a;
+        border: none;
+        &:hover{
+            background-color: #9e8f71;
+            color: #ffffff;
+        }
+    }
+
+}

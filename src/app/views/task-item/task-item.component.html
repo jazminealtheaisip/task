@@ -1,0 +1,21 @@
+<div *ngIf="todos.length > 0" >
+    <div class="container-row" *ngFor="let todo of todos">
+        <span class="td category-tbl"> 
+            <select [(ngModel)]="todo.category" class="select-category">
+                <option class="options" *ngFor="let category of categories" [value]="category" >{{category}}</option>
+            </select>
+        </span>
+
+        <span class="td task-tbl" >
+            <input type="text" [(ngModel)]="todo.task" class="task-input"/>
+            
+            <span class="td date-tbl">{{todo.date | date:' HH:mm dd/MM/yyyy'}}</span>
+        </span>
+        
+        <span class="td button-tbl"> <fa-icon [icon]="faPenToSquare" id="edit"></fa-icon>  |  <fa-icon [icon]="faTrash" id="del"></fa-icon>  
+        </span>
+        
+    </div>
+</div>
+
+<p *ngIf="!todos || todos.length ===0">No Task Yet</p>

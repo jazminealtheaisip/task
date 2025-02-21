@@ -1,0 +1,8 @@
+
+<div class="filtering" >
+    <select class="filter" [(ngModel)]="selectedFilter" (change)="filterTasks()" 
+    [ngStyle]="{'background-color': getCategoryColor(selectedFilter)}">
+        <option value="All">All</option>
+        <option class="options" *ngFor="let category of uniqueCategories" [value]="category" >{{category}}</option>
+    </select>
+</div>
