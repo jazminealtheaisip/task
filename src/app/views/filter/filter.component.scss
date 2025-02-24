@@ -3,10 +3,11 @@
     width: 12%;
     padding: 5px 0;
     text-align: center;
-    border: 1px solid #615d54;
+    border: 1px solid #b9b9b9;
     font-weight: 700;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    margin-bottom: 0px;
     &:hover{
         background-color: #d6d0c0;
     }

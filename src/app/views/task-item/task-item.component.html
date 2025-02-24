@@ -9,7 +9,7 @@
         <span class="td task-tbl" >
             <input type="text" [(ngModel)]="todo.task" class="task-input"/>
             
-            <span class="td date-tbl">{{todo.date | date:' HH:mm dd/MM/yyyy'}}</span>
+            <span class="td date-tbl">{{todo.date | date:' HH:mm MM/dd/yyyy'}}</span>
         </span>
         
         <span class="td button-tbl"> <fa-icon [icon]="faPenToSquare" id="edit"></fa-icon>  |  <fa-icon [icon]="faTrash" id="del"></fa-icon>  

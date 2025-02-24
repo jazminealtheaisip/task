@@ -1,13 +1,12 @@
 
-
 .container-row{
     background-color: #fff7e6;
-    border: 1px solid #615d54;
+    border: 1px solid #dad9d7;
     display: flex;
-    margin: 3px 0;
-   
+    margin-bottom: 2px;
+    box-shadow: 3px 1px 3px #c7c7c7;
     .td:not(.button-tbl, .date-tbl){
-        border-right: 1px solid #615d54;
+        border-right: 1px solid #dad9d7;
     }
 
     .category-tbl{
@@ -21,6 +20,7 @@
             height: 100%;
         }
     }
+    
     .task-tbl{
         width: 80%;
         padding: 0 12px;
@@ -39,16 +39,23 @@
     .button-tbl{
         width: 8%;
         text-align: center;
-        font-size: 18px;
+        font-size: 17px;
         display: flex;
         justify-content: space-around;
         align-items: center;
         font-weight: 200;
+        color: #a3a3a3;
         #edit{
-            color: green;
+            color: rgb(2, 122, 2);
+        }
+        #edit:hover{
+            color: rgb(1, 68, 1);
         }
         #del{
             color: rgb(219, 0, 0);
+        }
+        #del:hover{
+            color: rgb(168, 1, 1);
         }
     }
 }

@@ -1,0 +1,46 @@
+.tasks{
+    display: flex;
+    color: white;
+    justify-content: center;
+    .count{
+        padding: 15px 45px;
+        background-color: #f7f0e0;
+        margin: 2px 5px;
+        border-radius: 5px;
+        box-shadow: 3px 1px 3px #c7c7c7; 
+        border: 1px solid rgb(212, 212, 212);
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        font-weight: 500;
+        span{
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            display: flex;
+            align-items:center;
+            justify-content: space-evenly;
+            
+        }
+    }
+    .total{
+        background-color: #e7e0cf;
+        color: #3d3b36;
+    }
+    .todo{
+        background-color: #dcceb3;
+        color: rgb(65, 61, 53);
+    }
+    .completed{
+        background-color: #8de79e;
+        color: #325239;
+    }
+    .ongoing{
+        background-color: #a3bdff;
+        color: #1a2f64;
+    }
+    .pending{
+        background-color: #f1c159;
+        color: #3f2c02;
+    }
+}

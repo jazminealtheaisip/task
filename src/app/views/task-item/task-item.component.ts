@@ -24,6 +24,7 @@ export class TaskItemComponent implements OnInit {
     this.todoService.getTodos().subscribe(todos => {
       this.todos = todos;
     })
+    
   }
 
   toggleEdit(index: number) {
@@ -44,5 +45,7 @@ export class TaskItemComponent implements OnInit {
         return 'white';
     }
   }
+
+ 
 
 }

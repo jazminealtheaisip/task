@@ -19,9 +19,30 @@ export class TodoService {
             isEditing: false,
           },
           {
+            id: '1',
+            task: 'study',
+            category: Category.Todo,
+            date: new Date(),
+            isEditing: false,
+          },
+          {
+            id: '1',
+            task: 'study',
+            category: Category.Todo,
+            date: new Date(),
+            isEditing: false,
+          },
+          {
             id: '2',
             task: 'learn',
             category: Category.Completed,
+            date: new Date(),
+            isEditing: false,
+          },
+          {
+            id: '3',
+            task: 'learn',
+            category: Category.Ongoing,
             date: new Date(),
             isEditing: false,
           },
@@ -40,12 +61,15 @@ export class TodoService {
             isEditing: false,
           },
           
+          
         ]
    }
-
+  
   getTodos(){
     return of(this.todos);
   }
 
+  
+  
   
 }

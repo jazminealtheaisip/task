@@ -22,13 +22,13 @@ export class FilterComponent implements OnInit {
       case 'Todo':
         return '#dcceb3';
       case 'Pending':
-        return '#e5e78d';
+        return '#f1c159';
       case 'Ongoing':
         return '#a3bdff';
       case 'Completed':
         return '#8de79e';
       default:
-        return 'white';
+        return '#e7e0cf';
     }
   }
 
