@@ -5,6 +5,7 @@
     display: flex;
     margin-bottom: 2px;
     box-shadow: 3px 1px 3px #c7c7c7;
+    
     .td:not(.button-tbl, .date-tbl){
         border-right: 1px solid #dad9d7;
     }
@@ -24,9 +25,9 @@
     .task-tbl{
         width: 80%;
         padding: 0 12px;
+        padding-top: 2px;
         & input{
             width: 100%;
-            
             background-color: transparent;
             border: none;
         }

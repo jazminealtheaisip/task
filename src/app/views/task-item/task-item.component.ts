@@ -24,11 +24,6 @@ export class TaskItemComponent implements OnInit {
     this.todoService.getTodos().subscribe(todos => {
       this.todos = todos;
     })
-    
-  }
-
-  toggleEdit(index: number) {
-    this.todos[index].isEditing = !this.todos[index].isEditing;
   }
   
   getCategoryColor(category: string): string {
@@ -42,10 +37,7 @@ export class TaskItemComponent implements OnInit {
       case 'Completed':
         return '#8de79e';
       default:
-        return 'white';
+        return 'all';
     }
   }
-
- 
-
 }

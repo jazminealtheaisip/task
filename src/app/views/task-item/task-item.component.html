@@ -1,4 +1,4 @@
-<div *ngIf="todos.length > 0" >
+<div *ngIf="todos.length > 0"  >
     <div class="container-row" *ngFor="let todo of todos">
         <span class="td category-tbl"> 
             <select [(ngModel)]="todo.category" class="select-category">
@@ -17,5 +17,7 @@
         
     </div>
 </div>
+
+
 
 <p *ngIf="!todos || todos.length ===0">No Task Yet</p>

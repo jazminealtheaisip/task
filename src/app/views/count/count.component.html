@@ -1,7 +1,11 @@
 <div class="tasks">
     <div class="count total">Total Task: <span><mat-icon>rule</mat-icon>{{totalCount}}</span></div>
+
     <div class="count todo">Todo Count: <span><mat-icon>format_list_bulleted</mat-icon>{{categoryCounts['Todo'] || 0}}</span></div>
+
     <div class="count pending">Pending Count:  <span><mat-icon>pending_actions</mat-icon>{{categoryCounts['Pending'] || 0}}</span></div>
+
     <div class="count ongoing">Ongoing Count: <span><mat-icon>update</mat-icon>{{categoryCounts['Ongoing'] || 0}}</span></div>
+    
     <div class="count completed">Completed Count: <span><mat-icon>checklist</mat-icon>{{categoryCounts['Completed'] || 0}}</span></div>
 </div> 

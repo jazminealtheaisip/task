@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Todo } from '../todos';
 import { of } from 'rxjs';
 import { Category } from '../categories';
@@ -6,18 +6,11 @@ import { Category } from '../categories';
 @Injectable({
   providedIn: 'root'
 })
-export class TodoService {
+export class TodoService  {
   todos: Todo[];
   
   constructor() {
     this.todos = [
-          {
-            id: '1',
-            task: 'study',
-            category: Category.Todo,
-            date: new Date(),
-            isEditing: false,
-          },
           {
             id: '1',
             task: 'study',
@@ -61,15 +54,24 @@ export class TodoService {
             isEditing: false,
           },
           
-          
         ]
    }
   
   getTodos(){
     return of(this.todos);
   }
-
   
+  totalCount: number = 0;
+  categoryCounts: {[key:string]: number}={}
+  
+  getCountCategories(){
+    this.categoryCounts = this.todos.reduce((acc, todo) => {
+      acc[todo.category] = (acc[todo.category] || 0) + 1;
+      return acc;
+    }, {} as { [key: string]: number });
+    this.totalCount = this.todos.length;
+    return of ({categoryCounts: this.categoryCounts, totalCount:this.totalCount})
+  }
   
   
 }

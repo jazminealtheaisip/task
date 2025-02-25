@@ -12,10 +12,11 @@ export class FilterComponent implements OnInit {
   uniqueCategories: string[] = [];
 
   constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {  this.uniqueCategories = [...new Set(this.categories)];
+
+  /* ngOnInit(): void {  this.uniqueCategories = [...new Set(this.categories)];
   }
-  
 
   getCategoryColor(category: string): string {
     switch (category) {
@@ -30,7 +31,7 @@ export class FilterComponent implements OnInit {
       default:
         return '#e7e0cf';
     }
-  }
+  } */
 
   filterTasks() {
     
