@@ -4,7 +4,7 @@
     border: 1px solid #dad9d7;
     display: flex;
     margin-bottom: 2px;
-    box-shadow: 3px 1px 3px #c7c7c7;
+    box-shadow: 1px 0.5px 0.5px #c7c7c7;
     
     .td:not(.button-tbl, .date-tbl){
         border-right: 1px solid #dad9d7;
@@ -13,12 +13,16 @@
     .category-tbl{
         width: 12%;
         .select-category{
-            background-color: #fff7e6;
+            background-color: #f7edd7;
             border: none;
             font-weight: 600;
             text-align: center;
             width: 100%;
             height: 100%;
+            cursor: pointer;
+            &:hover{
+                background-color: #eee3cd;
+            }
         }
     }
     
@@ -42,12 +46,14 @@
         text-align: center;
         font-size: 17px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
         font-weight: 200;
         color: #a3a3a3;
+        cursor: pointer;
         #edit{
             color: rgb(2, 122, 2);
+            
         }
         #edit:hover{
             color: rgb(1, 68, 1);
@@ -58,6 +64,8 @@
         #del:hover{
             color: rgb(168, 1, 1);
         }
+        
+        
     }
 }
 

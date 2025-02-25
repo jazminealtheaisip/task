@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {HttpClientModule} from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,9 @@ import { TaskItemComponent } from './views/task-item/task-item.component';
 import { FilterComponent } from './views/filter/filter.component';
 import { CountComponent } from './views/count/count.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginPageComponent } from './views/login-page/login-page.component';
+
+/* import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; */
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +25,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TaskItemComponent,
     FilterComponent,
     CountComponent,
+    LoginPageComponent,
+ 
+   
 
   ],
   imports: [
@@ -30,7 +37,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FontAwesomeModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatTooltipModule,
+   /*  NgbModule */
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,7 +12,14 @@
             <span class="td date-tbl">{{todo.date | date:' HH:mm MM/dd/yyyy'}}</span>
         </span>
         
-        <span class="td button-tbl"> <fa-icon [icon]="faPenToSquare" id="edit"></fa-icon>  |  <fa-icon [icon]="faTrash" id="del"></fa-icon>  
+        <span class="td button-tbl"> 
+            <fa-icon [icon]="faPenToSquare" id="edit" matTooltip="Edit" >
+                
+            </fa-icon>
+            |  
+            <fa-icon [icon]="faTrash" id="del" matTooltip="Delete">
+
+            </fa-icon>  
         </span>
         
     </div>

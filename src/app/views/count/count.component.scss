@@ -1,18 +1,16 @@
 .tasks{
     display: flex;
-    color: white;
-    justify-content: center;
+    justify-content: space-evenly;
     .count{
         padding: 15px 45px;
-        background-color: #f7f0e0;
         margin: 2px 5px;
         border-radius: 5px;
-        box-shadow: 3px 1px 3px #c7c7c7; 
-        border: 1px solid rgb(212, 212, 212);
+        box-shadow: 1px 1px 1px #666666; 
         display: flex;
         flex-direction: column;
         font-size: 12px;
         font-weight: 500;
+        cursor: pointer;
         span{
             font-weight: 700;
             font-size: 20px;
@@ -43,4 +41,5 @@
         background-color: #f1c159;
         color: #3f2c02;
     }
+    
 }

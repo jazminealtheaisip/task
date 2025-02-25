@@ -19,18 +19,44 @@
   
     select{
         padding: 5px;
-        background-color: #dcceb3;
+        background-color: #d3c6ac;
         font-size: 12px;
+        box-shadow: 0.5px 0.5px 0.5px #666666; 
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        
     }
 
     .addButton{
         padding: 5px 30px;
         margin-left: 20px;
-        background-color: #c5b18a;
-        border: none;
+        background-color: #ffe7b8;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        color: #3a352a;
+        font-weight: 600;
+        box-shadow: 1px 1px 1px #666666; 
+        border-radius: 3px; 
+        border: 1px solid #9c8d70;
+        transition: all ease 0.1s;
+        cursor: pointer;
         &:hover{
             background-color: #9e8f71;
             color: #ffffff;
+            border: 1px solid #7a6f57;
+            #add-icon{
+                color: #ffffff;
+            }
         }
+            #add-icon{
+                display: flex;
+                text-align: center;
+                align-items: center;
+                color: #3a352a;
+                font-size: 16px;
+            }
     }
 }

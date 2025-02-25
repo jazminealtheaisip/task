@@ -34,6 +34,8 @@ $todoUI-theme: mat.define-light-theme((
 @include mat.all-component-themes($todoUI-theme);
 
 /* You can add global styles to this file, and also import other style files */
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
 *{
     margin: 0;
     font-family: "Poppins", serif;

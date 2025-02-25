@@ -1,12 +1,57 @@
-.container{
+.containerhead{
     background-color: #d3be97;
     padding: 15px 30px;
     color: rgb(27, 27, 27);
     box-shadow: 2px 1.2px 2px #666666;  
-  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    .title{
+        font-family: "Poppins", serif;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    //Chrome and Safari
+    .mainLoginInput::-webkit-input-placeholder  { 
+    font-family: FontAwesome;
+    font-weight: normal;
+    overflow: visible;
+    vertical-align: top;
+    display: inline-block !important;
+    padding-left: 5px;
+    padding-top: 2px;
+    color: hsl(40, 22%, 37%);
+    }
+    
+    //for older version of ms edge and internet explorer
+    .mainLoginInput:-ms-input-placeholder  { 
+    font-family: FontAwesome;
+    font-weight: normal;
+    overflow: visible;
+    vertical-align: top;
+    display: inline-block !important;
+    padding-left: 5px;
+    padding-top: 2px;
+    color: hsl(40, 22%, 37%);
+    }
+
+    .mainLoginInput{
+        padding: 2px;
+        
+    }
+    .submit{
+        cursor: pointer;
+        background-color: #ffe7b8;
+        border: 1px solid #9c8d70;
+        padding: 3px;
+        box-shadow: 0.5px 0.5px 0.5px #666666; 
+        &:hover{
+            background-color: #9e8f71;
+            color: #ffffff;
+    }
 }
-.title{
-    font-family: "Poppins", serif;
-    font-weight: 700;
-    margin: 0;
+
 }
+    

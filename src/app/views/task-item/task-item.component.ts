@@ -11,8 +11,7 @@ import { of } from 'rxjs';
   styleUrls: ['./task-item.component.scss']
 })
 export class TaskItemComponent implements OnInit {
-  todos: Todo[] = []
-  selectedCategory: string = "Todo";
+  todos: Todo[] = [];  
   categories: string[] = ['Todo','Pending','Ongoing','Completed',];
 
   faTrash = faTrash;
@@ -25,6 +24,8 @@ export class TaskItemComponent implements OnInit {
       this.todos = todos;
     })
   }
+  
+ 
   
   getCategoryColor(category: string): string {
     switch (category) {

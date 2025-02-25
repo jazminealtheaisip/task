@@ -1,5 +1,5 @@
 .filter{
-    background-color: #e7e0cf;
+    background-color: #d3c6ac;
     width: 12%;
     padding: 5px 0;
     text-align: center;
@@ -8,6 +8,7 @@
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     margin-top: 8px;
+    cursor: pointer;
     &:hover{
         background-color: #d6d0c0;
     }
