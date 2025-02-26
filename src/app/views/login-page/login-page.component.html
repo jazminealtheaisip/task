@@ -1,12 +1,25 @@
-<div>
-    <h2>Login</h2>
-    <form (ngSubmit)="onSubmit()">
-      <label for="username">Username:</label>
-      <input type="text" id="username" [(ngModel)]="username" name="username" required>
-  
-      <label for="password">Password:</label>
-      <input type="password" id="password" [(ngModel)]="password" name="password" required>
-  
-      <button type="submit">Login</button>
-    </form>
+<div class="login-pg">
+  <div class="login-cont">
+    <div class="text">
+      <h1 class="login-text">Login</h1>
+    </div>
+
+    <div class="form">
+      <form (ngSubmit)="onSubmit()">
+        <div class="name">
+          <label for="username" >Username: </label>
+          <input type="text" id="username" [(ngModel)]="username" name="username" required>
+        </div>
+
+        <div class="pass">
+          <label for="password">Password: </label>
+          <input type="password" id="password" [(ngModel)]="password" name="password" required>
+        </div>
+        
+        <div class="button-login">
+          <button type="submit" routerLink="/todo-list">Login</button>
+        </div>
+      </form>
+    </div>
   </div>
+</div>

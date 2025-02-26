@@ -15,6 +15,7 @@ import { FilterComponent } from './views/filter/filter.component';
 import { CountComponent } from './views/count/count.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginPageComponent } from './views/login-page/login-page.component';
+import { TodoListPageComponent } from './views/todo-list-page/todo-list-page.component';
 
 /* import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; */
 @NgModule({
@@ -26,6 +27,7 @@ import { LoginPageComponent } from './views/login-page/login-page.component';
     FilterComponent,
     CountComponent,
     LoginPageComponent,
+    TodoListPageComponent,
  
    
 

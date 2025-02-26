@@ -39,7 +39,6 @@
 
     .mainLoginInput{
         padding: 2px;
-        
     }
     .submit{
         cursor: pointer;
@@ -50,8 +49,15 @@
         &:hover{
             background-color: #9e8f71;
             color: #ffffff;
+        }
     }
-}
+
+    .logout{
+        color: rgb(27, 27, 27);
+        &:hover{
+            color: #9e8f71;
+        }
+    }
 
 }
     

@@ -1,0 +1,69 @@
+.login-pg{
+    background-color: #d3be978c;
+    height: 100%;
+    display: flex;
+    padding: 220px;
+    justify-content: center;
+    
+    .login-cont{
+        display: flex;
+        flex-direction: column;
+        .text{
+            background-color: #d3be97;
+            height: 15%;
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 3px 1px 1px #666666; 
+            padding-top: 10px;
+            .login-text{
+                font-weight: 700;
+                font-size: 30px;
+            }
+        }
+
+        .form{
+            display: flex;
+            height: 50%;
+            background-color: #fffdfa;
+            box-shadow: 3px 1px 1px #666666; 
+            padding: 30px 20px;
+            .name{
+                display: flex;
+                justify-content:space-between;
+                align-items: center;
+                margin-top: 10px;
+                margin-bottom: 40px;
+                label{
+                    font-weight: 400;
+                }
+                
+            }
+            .pass{
+                margin-bottom: 40px;
+                display: flex;
+                justify-content:space-between;
+            }
+            .button-login{
+                bottom: 0;
+                button{
+                    background-color: #d3be97;
+                    border: 1px solid #a79678;
+                    margin-bottom: 10px;
+                    border-radius: 3px;
+                    padding: 5px 20px;
+                    float: right;
+                    
+                    
+                    &:hover{
+                        background-color: #9c8d71;
+                        border: 1px solid #c9b99c;
+
+                    }
+                }
+                
+            }
+        }
+    }
+}

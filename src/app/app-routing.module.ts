@@ -2,14 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './views/login-page/login-page.component';
 import { AppComponent } from './app.component';
+import { TodoListPageComponent } from './views/todo-list-page/todo-list-page.component';
 
 const routes: Routes = [
   {
-    path: 'login-page', component:LoginPageComponent
+    path: 'login', component: LoginPageComponent, 
   },
+  
   {
-    path: 'root', component: AppComponent
+    path: 'todo-list', component: TodoListPageComponent, 
   },
+  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  
 ];
 
 @NgModule({
