@@ -25,7 +25,7 @@
 
         .form{
             display: flex;
-            height: 50%;
+            height: 60%;
             background-color: #fffdfa;
             box-shadow: 3px 1px 1px #666666; 
             padding: 30px 20px;
@@ -34,14 +34,14 @@
                 justify-content:space-between;
                 align-items: center;
                 margin-top: 10px;
-                margin-bottom: 40px;
+                margin-bottom: 10px;
                 label{
                     font-weight: 400;
                 }
                 
             }
             .pass{
-                margin-bottom: 40px;
+                margin-bottom: 10px;
                 display: flex;
                 justify-content:space-between;
             }

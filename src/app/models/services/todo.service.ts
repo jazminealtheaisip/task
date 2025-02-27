@@ -2,14 +2,15 @@ import { Injectable, OnInit } from '@angular/core';
 import { Todo } from '../todos';
 import { of } from 'rxjs';
 import { Category } from '../categories';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService  {
   todos: Todo[];
-  
-  constructor() {
+  /* baseApiUrl: string */
+  constructor(private http: HttpClient) {
     this.todos = [
           {
             id: '1',
@@ -60,6 +61,10 @@ export class TodoService  {
   
   getTodos(){
     return of(this.todos);
+  }
+
+  getAllTodos(){
+    //this.http.get()
   }
   
   totalCount: number = 0;

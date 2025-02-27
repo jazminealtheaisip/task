@@ -1,8 +1,11 @@
 .tasks{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding: 20px 0 10px 0;
     .count{
-        padding: 15px 45px;
+        width: 15%;
+        
+        padding: 8px 15px;
         margin: 2px 5px;
         border-radius: 5px;
         box-shadow: 1px 1px 1px #666666; 

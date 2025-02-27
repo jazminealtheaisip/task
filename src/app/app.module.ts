@@ -5,8 +5,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {HttpClientModule} from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { TaskComponent } from './views/task/task.component';
 import { HeaderComponent } from './views/header/header.component';
@@ -41,7 +41,6 @@ import { TodoListPageComponent } from './views/todo-list-page/todo-list-page.com
     BrowserAnimationsModule,
     MatIconModule,
     MatTooltipModule,
-   /*  NgbModule */
   ],
   providers: [],
   bootstrap: [AppComponent]
