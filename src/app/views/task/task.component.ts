@@ -13,7 +13,7 @@ import{v4 as uuidv4} from 'uuid';
 export class TaskComponent implements OnInit {
   
   
-  categories = Object.values(Category);
+  taskStatus = Object.values(Category);
 
   constructor(private todoService:TodoService) { }
 

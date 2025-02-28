@@ -4,7 +4,7 @@
             <input id="toDo" class="input-task" type="text" placeholder="Enter a Task" >
 
             <select class="categories-style">
-                <option *ngFor="let category of categories" [value]="category" >{{category}}</option>
+                <option *ngFor="let category of taskStatus" [value]="taskStatus" >{{category}}</option>
             </select>
             
             <button class="addButton" type="submit" ><mat-icon id="add-icon">add</mat-icon> Add</button>

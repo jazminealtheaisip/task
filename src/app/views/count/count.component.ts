@@ -11,18 +11,20 @@ import {TodoService } from '../../models/services/todo.service';
 export class CountComponent implements OnInit {
   todos: Todo[] = []
   totalCount: number = 0;
-  categoryCounts: {[key:string]: number}={}
+  count: {[key:string]: number}={}
   
   constructor(private todoService:TodoService) { }
 
   ngOnInit(): void {
-    this.todoService.getTodos().subscribe(todos => {
-      this.todos = todos;
+    this.todoService.getCount().subscribe({
+      next: (response)=>{
+        this.count= response.count;
+        this.totalCount = response.totalCount;
+      },
+      error:(error) => {
+        console.log(error);
+      }
     })
-    this.todoService.getCountCategories().subscribe(({categoryCounts, totalCount})=>{
-      this.categoryCounts=categoryCounts;
-      this.totalCount = totalCount;
-    });
   }
   
   

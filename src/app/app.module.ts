@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {HttpClientModule} from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,16 +28,13 @@ import { TodoListPageComponent } from './views/todo-list-page/todo-list-page.com
     CountComponent,
     LoginPageComponent,
     TodoListPageComponent,
- 
-   
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     FontAwesomeModule,
-    HttpClientModule,
     BrowserAnimationsModule,
     MatIconModule,
     MatTooltipModule,

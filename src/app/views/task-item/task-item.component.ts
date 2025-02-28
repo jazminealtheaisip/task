@@ -4,6 +4,7 @@ import { Category } from 'src/app/models/categories';
 import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { TodoService } from 'src/app/models/services/todo.service';
 import { of } from 'rxjs';
+import { error } from 'console';
 
 @Component({
   selector: 'app-task-item',
@@ -12,7 +13,7 @@ import { of } from 'rxjs';
 })
 export class TaskItemComponent implements OnInit {
   todos: Todo[] = [];  
-  categories: string[] = ['Todo','Pending','Ongoing','Completed',];
+  taskStatus: string[] = ['Todo','Pending','Ongoing','Completed',];
 
   faTrash = faTrash;
   faPenToSquare = faPenToSquare;
@@ -20,14 +21,18 @@ export class TaskItemComponent implements OnInit {
   constructor(private todoService:TodoService) { }
 
   ngOnInit(): void {
-    this.todoService.getTodos().subscribe(todos => {
-      this.todos = todos;
+    this.todoService.getTodos().subscribe({
+      next: (todos)=>{
+        this.todos = todos;
+      },
+      error:(response) => {
+        console.log(response);
+      }
     })
-  }
+    }
   
- 
-  
-  getCategoryColor(category: string): string {
+    
+  /* getCategoryColor(category: string): string {
     switch (category) {
       case 'Todo':
         return '#dcceb3';
@@ -40,5 +45,5 @@ export class TaskItemComponent implements OnInit {
       default:
         return 'all';
     }
-  }
+  } */
 }

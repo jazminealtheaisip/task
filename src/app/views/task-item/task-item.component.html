@@ -1,15 +1,15 @@
 <div *ngIf="todos.length > 0"  class="task-container">
     <div class="container-row" *ngFor="let todo of todos">
         <span class="td category-tbl"> 
-            <select [(ngModel)]="todo.category" class="select-category">
-                <option class="options" *ngFor="let category of categories" [value]="category" >{{category}}</option>
+            <select [(ngModel)]="todo.taskStatus" class="select-category">
+                <option class="options" *ngFor="let taskStatus of taskStatus" [value]="taskStatus" >{{taskStatus}}</option>
             </select>
         </span>
 
         <span class="td task-tbl" >
-            <input type="text" [(ngModel)]="todo.task" class="task-input"/>
+            <input type="text" [(ngModel)]="todo.taskName" class="task-input"/>
             
-            <span class="td date-tbl">{{todo.date | date:' HH:mm MM/dd/yyyy'}}</span>
+            <span class="td date-tbl">{{todo.dateAdded | date:' HH:mm MM/dd/yyyy'}}</span>
         </span>
         
         <span class="td button-tbl"> 
