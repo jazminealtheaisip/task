@@ -16,15 +16,15 @@ export class CountComponent implements OnInit {
   constructor(private todoService:TodoService) { }
 
   ngOnInit(): void {
-    this.todoService.getCount().subscribe({
-      next: (response)=>{
-        this.count= response.count;
-        this.totalCount = response.totalCount;
-      },
-      error:(error) => {
-        console.log(error);
-      }
-    })
+     this.todoService.getCount().subscribe({
+       next: (response)=>{
+         this.count= response.count;
+         this.totalCount = response.totalCount;
+       },
+       error:(error) => {
+         console.log(error);
+       }
+     })
   }
   
   

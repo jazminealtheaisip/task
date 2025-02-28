@@ -1,6 +1,14 @@
 export enum Category{
-    Todo = "Todo",
+    
+    Todo = 'Todo',
     Pending = 'Pending',
-    Ongoing = "Ongoing",
-    Complete = "Completed",
+    Ongoing = 'Ongoing',
+    Completed = 'Completed',
 }
+
+/* export const CategoryData{
+    [Category.Todo]: {
+        name: 'Todo',
+        values: ['Todo', 'Pending', 'Ongoing', 'Completed']
+    }
+} */

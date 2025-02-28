@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { TodoService } from 'src/app/models/services/todo.service';
+import { Todo } from 'src/app/models/todos';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
@@ -10,31 +11,15 @@ export class FilterComponent implements OnInit {
   selectedCategory: string = "Todo";
   categories: string[] = ['Todo','Pending','Ongoing','Completed',];
   uniqueCategories: string[] = [];
-
-  constructor() { }
-  ngOnInit(): void {}
-
-
-  /* ngOnInit(): void {  this.uniqueCategories = [...new Set(this.categories)];
-  }
-
-  getCategoryColor(category: string): string {
-    switch (category) {
-      case 'Todo':
-        return '#dcceb3';
-      case 'Pending':
-        return '#f1c159';
-      case 'Ongoing':
-        return '#a3bdff';
-      case 'Completed':
-        return '#8de79e';
-      default:
-        return '#e7e0cf';
-    }
-  } */
+  totalCount: number = 0;
+  
+  todos: Todo[] = []; 
+  
+  constructor(private todoService: TodoService) { }
+  ngOnInit(): void {
+    
+}
 
   filterTasks() {
-    
-    
   }
 }

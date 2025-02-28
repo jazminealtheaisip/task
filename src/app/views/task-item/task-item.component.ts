@@ -12,7 +12,7 @@ import { error } from 'console';
   styleUrls: ['./task-item.component.scss']
 })
 export class TaskItemComponent implements OnInit {
-  todos: Todo[] = [];  
+  todos: Todo[] = [ ];  
   taskStatus: string[] = ['Todo','Pending','Ongoing','Completed',];
 
   faTrash = faTrash;

@@ -1,10 +1,15 @@
 <div class="form-container">
-    <form > 
+    <form #form="ngForm" (ngSubmit)="addTodo()"> 
         <div class="task">
-            <input id="toDo" class="input-task" type="text" placeholder="Enter a Task" >
+            <input id="taskName" class="input-task" type="text" placeholder="Enter a Task" name="taskName" [(ngModel)] ="addTodoRequest.taskName">
 
-            <select class="categories-style">
-                <option *ngFor="let category of taskStatus" [value]="taskStatus" >{{category}}</option>
+            <!-- <select class="categories-style" id="taskStatus" [(ngModel)]="selectedCateg" (ngModelChange)="onCategoryChange($event)">
+                <option *ngFor="let status of categories" [value]="status" id="status" name="status" >{{status}}</option>
+            </select> -->
+
+            <select class="categories-style" id="taskStatus" name="taskStatus" [(ngModel)]="selectedCategory" (change)="onCategoryChange($event)">
+                
+                <option *ngFor="let status of taskStatus" [value]="status">{{ status }}</option>
             </select>
             
             <button class="addButton" type="submit" ><mat-icon id="add-icon">add</mat-icon> Add</button>

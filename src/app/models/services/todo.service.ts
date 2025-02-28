@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 })
 export class TodoService  {
   todos: Todo[] = [];
-  
+
   baseApiUrl: string = environment.baseApiUrl;
 
   constructor(private http: HttpClient) { }
@@ -29,17 +29,22 @@ export class TodoService  {
     return of ({categoryCounts: this.count, totalCount:this.totalCount})
   } */
 
-  getCount(): Observable<{count: {[key:string]:number}, totalCount:number}>{
-    return this.getTodos().pipe(
-      map((todos) => {
-        const count = todos.reduce((acc, todo) => {
-          acc[todo.taskStatus] = (acc[todo.taskStatus] || 0) + 1;
-          return acc;
-        }, {} as { [key: string]: number });
+   getCount(): Observable<{count: {[key:string]:number}, totalCount:number}>{
+     return this.getTodos().pipe(
+       map((todos) => {
+          const count = todos.reduce((acc, todo) => {
+            acc[todo.taskStatus] = (acc[todo.taskStatus] || 0) + 1;
+            return acc;
+          }, {} as { [key: string]: number });
+         
   
-        const totalCount = todos.length;
-        return { count, totalCount };
-      }))
-  }
+         const totalCount = todos.length;
+         return { count, totalCount };
+       }))
+   }
+
+   addTodo(addTodoRequest:Todo): Observable<Todo>{
+    return this.http.post<Todo>(this.baseApiUrl + '/api/TodoList', addTodoRequest);
+   }
   
 }

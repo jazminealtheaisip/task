@@ -6,11 +6,10 @@ import { TodoListPageComponent } from './views/todo-list-page/todo-list-page.com
 
 const routes: Routes = [
   {
-    path: 'login', component: LoginPageComponent, 
+    path: 'login', title: 'Login', component: LoginPageComponent, 
   },
-  
   {
-    path: 'todo-list', component: TodoListPageComponent, 
+    path: 'todo-list', title: 'Todo',component: TodoListPageComponent, 
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
   

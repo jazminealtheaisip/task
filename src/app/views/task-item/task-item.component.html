@@ -1,8 +1,8 @@
 <div *ngIf="todos.length > 0"  class="task-container">
     <div class="container-row" *ngFor="let todo of todos">
         <span class="td category-tbl"> 
-            <select [(ngModel)]="todo.taskStatus" class="select-category">
-                <option class="options" *ngFor="let taskStatus of taskStatus" [value]="taskStatus" >{{taskStatus}}</option>
+            <select [(ngModel)]="todo.taskStatus"  class="select-category">
+                <option class="options" *ngFor="let status of taskStatus" [value]="status" >{{status}}</option>
             </select>
         </span>
 
@@ -24,8 +24,6 @@
         
     </div>
 </div>
-
-
 
 
 <p *ngIf="!todos || todos.length ===0">No Task Yet</p>
