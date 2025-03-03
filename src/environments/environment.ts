@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseApiUrl: 'https://10.1.50.64:5000'
+  baseApiUrl: 'https://10.1.50.73:5000'
 };
 
 /*
