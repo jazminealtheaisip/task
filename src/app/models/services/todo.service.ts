@@ -36,11 +36,6 @@ export class TodoService  {
     return this.http.put<Todo>(this.baseApiUrl + '/api/TodoList/' + id, updateEmployeeRequest);
   }
 
-  /* deleteTodo( fetchIdRequest: FetchId): Observable<Todo>{
-    return this.http.request<Todo>('DELETE', this.baseApiUrl + '/api/TodoList', {
-      body: fetchIdRequest,
-  })} */
-
   deleteTodo(id: number): Observable<Todo>{
     return this.http.delete<Todo>(this.baseApiUrl + '/api/TodoList/'+ id);
   }

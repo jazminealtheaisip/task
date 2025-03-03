@@ -25,9 +25,7 @@ export class TaskItemComponent implements OnInit {
   ngOnInit(): void {
     this.todoService.todos$.subscribe(
       (todos)=>{
-        console.log('updated list received', todos)
         this.todos = [...todos];
-        
       }),
       this.todoService.getTodos().subscribe();
     }
