@@ -14,6 +14,7 @@ import{v4 as uuidv4} from 'uuid';
 export class TaskComponent implements OnInit {
   todos: Todo[] = [ ]; 
   categories = ['Todo', 'Pending', 'Ongoing', 'Completed'];
+  text = '';
 
   addTodoRequest: Todo = {
     id: 0,
@@ -48,12 +49,13 @@ export class TaskComponent implements OnInit {
       next: () => {
         this.addTodoRequest.taskName = '';
         this.selectedCategory = 'Todo';
-      this.todoService.getTodos().subscribe(); 
+        this.todoService.getTodos().subscribe(); 
     },
     error: (response) => {
       console.log(response);
     }
   })
+  
     console.log(this.addTodoRequest)
   }  
 

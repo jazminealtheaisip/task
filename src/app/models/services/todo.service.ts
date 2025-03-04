@@ -13,6 +13,7 @@ export class TodoService  {
   baseApiUrl: string = environment.baseApiUrl;
   private todosSubject = new BehaviorSubject<Todo[]>([]);
   todos$ = this.todosSubject.asObservable(); 
+  taskStatus = ['All','Todo', 'Pending', 'Ongoing', 'Completed'];
 
   constructor(private http: HttpClient) { }
 
@@ -22,9 +23,8 @@ export class TodoService  {
   }
 
   addTodo(todo:Todo): Observable<Todo>{
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-    return this.http.post<Todo>(this.baseApiUrl + '/api/TodoList', todo, {headers}).pipe(
+    //const headers = new HttpHeaders({ 'Content-Type': 'application/json' })     todo, {headers};
+    return this.http.post<Todo>(this.baseApiUrl + '/api/TodoList', todo, ).pipe(
       tap(newTodo => {
         const updatedTodos = [...this.todosSubject.value, newTodo];
         this.todosSubject.next(updatedTodos);
@@ -32,7 +32,7 @@ export class TodoService  {
     );
    }
 
-   updateTodo(id: number, updateEmployeeRequest: Todo): Observable<Todo>{
+  updateTodo(id: number, updateEmployeeRequest: Todo): Observable<Todo>{
     return this.http.put<Todo>(this.baseApiUrl + '/api/TodoList/' + id, updateEmployeeRequest);
   }
 
@@ -40,7 +40,7 @@ export class TodoService  {
     return this.http.delete<Todo>(this.baseApiUrl + '/api/TodoList/'+ id);
   }
 
-   getCount(): Observable<{count: {[key:string]:number}, totalCount:number}>{
+  getCount(): Observable<{count: {[key:string]:number}, totalCount:number}>{
     return this.getTodos().pipe(
       map((todos) => {
          const count = todos.reduce((acc, todo) => {
@@ -50,7 +50,14 @@ export class TodoService  {
  
         const totalCount = todos.length;
         return { count, totalCount };
-      }))
+      })
+    )
   }
+
+  getTodoCount(status:string): Observable<number>{
+    return this.http.get<{count:number}>(`${this.baseApiUrl}/api/TodoListCount/${status}`).pipe(map(response => response.count))
+  }
+  
+  
   
 }
