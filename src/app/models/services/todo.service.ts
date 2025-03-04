@@ -11,8 +11,12 @@ import { map, tap } from 'rxjs/operators';
 export class TodoService  {
   todos: Todo[] = [];
   baseApiUrl: string = environment.baseApiUrl;
-  private todosSubject = new BehaviorSubject<Todo[]>([]);
+  private todosSubject = new BehaviorSubject<Todo[]>([]);  
   todos$ = this.todosSubject.asObservable(); 
+
+  private countRefreshSubject = new BehaviorSubject<Boolean>(false);
+  countRefresh$ = this.countRefreshSubject.asObservable();
+
   taskStatus = ['All','Todo', 'Pending', 'Ongoing', 'Completed'];
 
   constructor(private http: HttpClient) { }
@@ -58,6 +62,8 @@ export class TodoService  {
     return this.http.get<{count:number}>(`${this.baseApiUrl}/api/TodoListCount/${status}`).pipe(map(response => response.count))
   }
   
-  
+  triggerCountRefresh(){
+    this.countRefreshSubject.next(true);
+  }
   
 }

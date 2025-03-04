@@ -30,9 +30,9 @@ export class TaskComponent implements OnInit {
   constructor(private todoService:TodoService, private router:Router) { }
 
   ngOnInit(): void {
-    console.log(this.categories); 
     
   }
+
   onCategoryChange(event: Event) {
     const selectedValue = (event.target as HTMLSelectElement).value;
     this.selectedCategory = selectedValue;
@@ -40,6 +40,7 @@ export class TaskComponent implements OnInit {
 
   addTodo(){
     if (!this.addTodoRequest.taskName ) {
+      alert("Task cannot be empty!");
       console.error('TaskName is required');
       return;
     }
@@ -50,6 +51,7 @@ export class TaskComponent implements OnInit {
         this.addTodoRequest.taskName = '';
         this.selectedCategory = 'Todo';
         this.todoService.getTodos().subscribe(); 
+        this.todoService.triggerCountRefresh();
     },
     error: (response) => {
       console.log(response);

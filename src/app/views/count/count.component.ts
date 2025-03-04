@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { Todo } from '../../models/todos';
 import { Category } from '../../models/categories';
 import {TodoService } from '../../models/services/todo.service';
@@ -9,7 +9,9 @@ import {TodoService } from '../../models/services/todo.service';
   styleUrls: ['./count.component.scss']
 })
 export class CountComponent implements OnInit {
+  @Output() filterSelected = new EventEmitter<string>();
   todos: Todo[] = []
+  
   totalCount: number = 0;
   count: {[key:string]: number}={}
   todoCount: {[key:string]: number}={
@@ -19,19 +21,22 @@ export class CountComponent implements OnInit {
     ongoing: 0,
     completed: 0,
   }
+  statusList = ['All','Todo', 'Pending', 'Ongoing', 'Completed'];
 
   constructor(private todoService:TodoService) { }
 
   ngOnInit(): void {
-    
-     this.getCounts();
-
-    
+    this.refreshCounts();
+    this.todoService.countRefresh$.subscribe(()=>{
+      this.refreshCounts()
+    })
   }
 
+  refreshCounts() {
+    this.statusList.forEach(status => this.getCounts(status)); 
+  }
 
-
-  getCounts(){
+  getCounts(status: string){
     const statuses = ['All', 'Todo', 'Pending', 'Ongoing', 'Completed'];
     
     statuses.forEach(status => {
@@ -48,9 +53,9 @@ export class CountComponent implements OnInit {
     });
   }
 
-
-  
-
+  filterTasks(statusList: string){
+    this.filterSelected.emit(statusList);
+  }
 
   
 }

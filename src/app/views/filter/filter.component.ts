@@ -20,6 +20,9 @@ export class FilterComponent implements OnInit {
     
 }
 
-  filterTasks() {
+filterBy(nameInput: HTMLInputElement) {
+  if (nameInput.value) {
+    this.todos = this.todos.filter(todos => todos.taskStatus)
   }
+}
 }

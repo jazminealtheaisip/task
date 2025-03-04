@@ -33,12 +33,16 @@
         width: 80%;
         padding: 0 12px;
         padding-top: 2px;
+        
         & input{
             width: 100%;
             background-color: transparent;
             border: none;
-            word-wrap: break-word;
+            //word-wrap: break-word;
+            //resize: none;
+            
         }
+        
     }
     .date-tbl{
         font-size: 10px;

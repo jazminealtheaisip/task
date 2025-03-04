@@ -1,7 +1,7 @@
 <div class="tasks" >
-    <div class="count total" >Total: <span><mat-icon>rule</mat-icon>{{todoCount['all']}}</span></div>
+    <div class="count total" (click)="filterTasks('all')">Total: <span><mat-icon>rule</mat-icon>{{todoCount['all']}}</span></div>
 
-    <div class="count todo">Todo: <span><mat-icon>format_list_bulleted</mat-icon>{{todoCount['todo'] || 0}}</span></div>
+    <div class="count todo" (click)="filterTasks('todo')">Todo: <span><mat-icon>format_list_bulleted</mat-icon>{{todoCount['todo'] || 0}}</span></div>
 
     <div class="count pending">Pending:  <span><mat-icon>pending_actions</mat-icon>{{todoCount['pending'] || 0}}</span></div>
 

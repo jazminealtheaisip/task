@@ -12,10 +12,11 @@ import { error } from 'console';
 export class TaskItemComponent implements OnInit {
   todos: Todo[] = [ ];  
   taskStatus: string[] = ['Todo','Pending','Ongoing','Completed',];
-
+  
   faTrash = faTrash;
   faPenToSquare = faPenToSquare;
-
+  
+  
   constructor(private todoService:TodoService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
@@ -26,11 +27,21 @@ export class TaskItemComponent implements OnInit {
       this.todoService.getTodos().subscribe();
     }
 
-  updateTodo(todo:Todo){
+
+
+
+  updateTodo(todo:any){
+    /* if (!todo.taskName.trim() ) {
+      alert("Task cannot be empty!");
+      todo.taskName = this.previousTaskName;
+      return;
+    } */
+
     this.todoService.updateTodo(todo.id, todo).subscribe({
       next: (response) =>{
         console.log('edit' , response);
         this.fetchUpdatedTodos();
+        this.todoService.triggerCountRefresh();
       }
     })
   }
@@ -39,21 +50,33 @@ export class TaskItemComponent implements OnInit {
     this.todoService.getTodos().subscribe({
       next: (todos) => {
         this.todos = todos; 
+      
       }
     });
   }
 
+  editTask(inputRef: HTMLInputElement){
+    
+    setTimeout(() => {
+      inputRef.focus();
+    }, 0);
+    
+  }
+
   deleteTodo(id:number){
-    this.todoService.deleteTodo(id).subscribe({
-      next:() =>{
-        console.log(`task with ${id} deleted`)
-        this.todos = this.todos.filter(todo => todo.id !==id);
-        
-      },
-      error: (error)=>{
-        console.error('error', error)
-      }
-    })
+    if(confirm('Are you sure you want to delete this task?')){
+      this.todoService.deleteTodo(id).subscribe({
+        next:() =>{
+          console.log(`task with ${id} deleted`)
+          this.todos = this.todos.filter(todo => todo.id !==id);
+          this.todoService.triggerCountRefresh();
+        },
+        error: (error)=>{
+          console.error('error', error)
+        }
+      })
+    }
+    
   }
 
   
