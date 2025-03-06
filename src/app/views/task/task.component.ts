@@ -4,7 +4,7 @@ import { Todo } from 'src/app/models/todos';
 import { Category } from 'src/app/models/categories';
 import { Router } from '@angular/router';
 import { TodoService } from 'src/app/models/services/todo.service';
-import{v4 as uuidv4} from 'uuid';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-task',
@@ -27,7 +27,7 @@ export class TaskComponent implements OnInit {
 
   selectedCategory: string = this.categories[0];
 
-  constructor(private todoService:TodoService, private router:Router) { }
+  constructor(private todoService:TodoService, private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     
@@ -52,14 +52,17 @@ export class TaskComponent implements OnInit {
         this.selectedCategory = 'Todo';
         this.todoService.getTodos().subscribe(); 
         this.todoService.triggerCountRefresh();
+        this.snackBar.open('New Task Added!', 'Close', {
+          duration: 3000,
+        })
     },
     error: (response) => {
       console.log(response);
     }
   })
-  
     console.log(this.addTodoRequest)
   }  
 
+  
   
 }

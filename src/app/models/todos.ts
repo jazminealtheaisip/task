@@ -8,7 +8,4 @@ export interface Todo{
     dateAdded: Date;
 }
 
-export interface FetchId{
-    id: number;
-}
 

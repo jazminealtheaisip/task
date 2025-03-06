@@ -11,9 +11,8 @@ import {TodoService } from '../../models/services/todo.service';
 export class CountComponent implements OnInit {
   @Output() filterSelected = new EventEmitter<string>();
   todos: Todo[] = []
-  
-  totalCount: number = 0;
-  count: {[key:string]: number}={}
+  /* totalCount: number = 0;
+  count: {[key:string]: number}={} */
   todoCount: {[key:string]: number}={
     all: 0,
     todo: 0,
@@ -26,7 +25,7 @@ export class CountComponent implements OnInit {
   constructor(private todoService:TodoService) { }
 
   ngOnInit(): void {
-    this.refreshCounts();
+    //this.refreshCounts();
     this.todoService.countRefresh$.subscribe(()=>{
       this.refreshCounts()
     })
@@ -42,7 +41,7 @@ export class CountComponent implements OnInit {
     statuses.forEach(status => {
       this.todoService.getTodoCount(status).subscribe({
         next: (count) => {
-          console.log(`count for ${status}:`, count);
+          //console.log(`count for ${status}:`, count);
           this.todoCount[status.toLowerCase()] = count; 
           
         },
@@ -52,10 +51,4 @@ export class CountComponent implements OnInit {
       });
     });
   }
-
-  filterTasks(statusList: string){
-    this.filterSelected.emit(statusList);
-  }
-
-  
 }

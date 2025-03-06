@@ -11,12 +11,11 @@ export class TodoListPageComponent implements OnInit {
   constructor(private todoService:TodoService) { }
 
   ngOnInit(): void { 
-    this.todoService.getTodos().subscribe((todos)=>{
+   /*  this.todoService.getTodos().subscribe((todos)=>{
         this.todos = todos;
-        
       },
       
-    )
+    ) */
   }
   
 
